@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Success Predictor</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        .container { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto; }
+        h1 { color: #333; text-align: center; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="number"], select { width: calc(100% - 22px); padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background-color: #4CAF50; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%; }
+        button:hover { background-color: #45a049; }
+        .form-group { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Predict Startup Success</h1>
+        <p>Enter the startup's features to predict if it will be Acquired/IPO (1) or Closed (0).</p>
+        <form action="/predict" method="post">
+
+            <div class="form-group">
+                <label for="age_last_milestone_year">Age Last Milestone Year:</label>
+                <input type="number" step="any" id="age_last_milestone_year" name="age_last_milestone_year" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="relationships">Relationships:</label>
+                <input type="number" step="any" id="relationships" name="relationships" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age_first_milestone_year">Age First Milestone Year:</label>
+                <input type="number" step="any" id="age_first_milestone_year" name="age_first_milestone_year" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="funding_total_usd">Funding Total Usd:</label>
+                <input type="number" step="any" id="funding_total_usd" name="funding_total_usd" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age_last_funding_year">Age Last Funding Year:</label>
+                <input type="number" step="any" id="age_last_funding_year" name="age_last_funding_year" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age_first_funding_year">Age First Funding Year:</label>
+                <input type="number" step="any" id="age_first_funding_year" name="age_first_funding_year" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="milestones">Milestones:</label>
+                <input type="number" step="any" id="milestones" name="milestones" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time_to_first_funding">Time To First Funding:</label>
+                <input type="number" step="any" id="time_to_first_funding" name="time_to_first_funding" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="avg_participants">Avg Participants:</label>
+                <input type="number" step="any" id="avg_participants" name="avg_participants" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="is_top500">Is the startup in the top 500 companies? (0=No, 1=Yes)</label>
+                <select id="is_top500" name="is_top500">
+                    <option value="0">0 (No)</option>
+                    <option value="1">1 (Yes)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="latitude">Latitude:</label>
+                <input type="number" step="any" id="latitude" name="latitude" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="funding_duration">Funding Duration:</label>
+                <input type="number" step="any" id="funding_duration" name="funding_duration" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="longitude">Longitude:</label>
+                <input type="number" step="any" id="longitude" name="longitude" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="funding_rounds">Funding Rounds:</label>
+                <input type="number" step="any" id="funding_rounds" name="funding_rounds" value="0.0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="has_roundC">Has the startup completed Round C funding? (0=No, 1=Yes)</label>
+                <select id="has_roundC" name="has_roundC">
+                    <option value="0">0 (No)</option>
+                    <option value="1">1 (Yes)</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
